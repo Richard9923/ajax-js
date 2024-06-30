@@ -7,6 +7,9 @@
   </head>
   <body>
     <button id="button">Get text file</button>
+    <br />
+    <br />
+    <div id="text"></div>
 
     <script>
       // Create event listener
@@ -20,6 +23,7 @@
         xhr.onload = function () {
           if (this.status == 200) {
             console.log(this.responseText);
+            document.getElementById("text").innerHTML = this.responseText;
           }
         };
 
