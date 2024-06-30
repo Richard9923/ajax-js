@@ -19,7 +19,7 @@
         // Create XHR Object
         let xhr = new XMLHttpRequest();
         // OPEN - type, url/file, async
-        xhr.open("get", "sample1.txt", true);
+        xhr.open("get", "sample.txt", true);
         xhr.onload = function () {
           if (this.status == 200) {
             console.log(this.responseText);
