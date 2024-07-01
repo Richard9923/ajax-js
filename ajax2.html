@@ -5,5 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ajax 2 - Local JSON</title>
   </head>
-  <body></body>
+  <body>
+    <button id="button1">Get User</button>
+    <button id="button2">Get Users</button>
+    <br /><br />
+    <h1>User</h1>
+    <div id="User"></div>
+    <h1>Users</h1>
+    <div id="Users"></div>
+
+    <script>
+      document.getElementById("button1").addEventListener("click", loadUser);
+
+      function loadUser() {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "user.json", true);
+
+        xhr.onload = function () {
+          if (this.status == 200) {
+            let user = JSON.parse(this.responseText);
+
+            let output = "";
+
+            output += console.log(output);
+            document.getElementById("user").innerHTML = output;
+          } else if (this.status == 404) {
+            console.log("Not Found");
+          }
+        };
+
+        xhr.send();
+      }
+    </script>
+  </body>
 </html>
